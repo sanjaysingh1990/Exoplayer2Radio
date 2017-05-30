@@ -17,7 +17,7 @@ allprojects {
         jcenter()
     }
     project.ext {
-        applicationId = 'org.y20k.transistor'
+        applicationId = 'org.rajmoh.radio.MainActivity'
         versionCode = 40
         versionName = '2.2.5 (Sons Of The Silent Age)'
         minSdkVersion = 19

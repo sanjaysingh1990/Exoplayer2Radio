@@ -6,5 +6,5 @@
     android:name="org.y20k.transistor.PlayerActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.y20k.transistor.PlayerActivity"
+    tools:context="org.rajmoh.radio.PlayerActivity"
     tools:ignore="MergeRootFrame" />

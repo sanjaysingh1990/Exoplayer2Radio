@@ -5,13 +5,13 @@
     android:baselineAligned="false"
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
-    tools:context="org.y20k.transistor.MainActivity">
+    tools:context="org.rajmoh.radio.MainActivity">
 
     <!-- this layout is a two-pane layout for larger screens -->
 
     <fragment
         android:id="@+id/fragment_main"
-        android:name="org.y20k.transistor.MainActivityFragment"
+        android:name="org.rajmoh.radio.MainActivityFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"

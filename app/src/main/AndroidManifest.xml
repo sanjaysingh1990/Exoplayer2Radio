@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.y20k.transistor">
+    package="org.rajmoh.radio">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -32,7 +32,7 @@
 
         <!-- MAIN ACTIVITY -->
         <activity
-            android:name=".MainActivity"
+            android:name="org.rajmoh.radio.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:resizeableActivity="true"
@@ -77,37 +77,37 @@
 
         <!-- INFOSHEET ACTIVITY -->
         <activity
-            android:name=".InfosheetActivity"
+            android:name="org.rajmoh.radio.InfosheetActivity"
             android:label="@string/title_activity_infosheet"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="org.rajmoh.radio.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout">
 
 
         <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.y20k.transistor.MainActivity" />
+                android:value="org.rajmoh.radio.MainActivity" />
 
         </activity>
 
 
         <!-- PLAYER ACTIVITY -->
         <activity
-            android:name=".PlayerActivity"
+            android:name="org.rajmoh.radio.PlayerActivity"
             android:label="@string/title_activity_player"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="org.rajmoh.radio.MainActivity"
             android:resizeableActivity="true"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.y20k.transistor.MainActivity" />
+                android:value="org.rajmoh.radio.MainActivity" />
 
         </activity>
 
 
         <!-- PLAYER SERVICE -->
         <service
-            android:name=".PlayerService"
+            android:name="org.rajmoh.radio.PlayerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
@@ -124,7 +124,7 @@
 
         <!-- SLEEP TIMER SERVICE -->
         <service
-            android:name=".helpers.SleepTimerService">
+            android:name="org.rajmoh.radio.helpers.SleepTimerService">
         </service>
 
     </application>
