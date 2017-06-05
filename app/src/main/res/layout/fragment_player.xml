@@ -75,10 +75,11 @@
             <ImageView
                 android:id="@+id/player_playback_indicator"
                 android:contentDescription="@string/descr_playback_indicator"
-                android:layout_width="?android:attr/listPreferredItemHeight"
-                android:layout_height="?android:attr/listPreferredItemHeight"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
                 android:minHeight="?android:attr/listPreferredItemHeight"
-                android:background="@drawable/ic_playback_indicator_stopped_24dp" />
+                android:background="@drawable/indicator_disable" />
 
             <ImageButton
                 android:id="@+id/player_item_more_button"

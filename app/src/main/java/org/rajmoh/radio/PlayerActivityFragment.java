@@ -657,11 +657,11 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
             mPlaybackButton.setImageResource(R.drawable.smbl_stop);
             // change playback indicator
             if (mStationLoading) {
-                mPlaybackIndicator.setBackgroundResource(R.drawable.ic_playback_indicator_loading_24dp);
+                mPlaybackIndicator.setBackgroundResource(R.drawable.indicator_loading);
                 mStationMetadataView.setText(R.string.descr_station_stream_loading);
                 mStationDataSheetMetadata.setText(R.string.descr_station_stream_loading);
             } else {
-                mPlaybackIndicator.setBackgroundResource(R.drawable.ic_playback_indicator_started_24dp);
+                mPlaybackIndicator.setBackgroundResource(R.drawable.indicator_started);
 //                mStationMetadataView.setText(mStationMetadata);
 //                mStationDataSheetMetadata.setText(mStationMetadata);
             }
@@ -676,7 +676,7 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
             // change playback button image to play
             mPlaybackButton.setImageResource(R.drawable.smbl_play);
             // change playback indicator
-            mPlaybackIndicator.setBackgroundResource(R.drawable.ic_playback_indicator_stopped_24dp);
+            mPlaybackIndicator.setBackgroundResource(R.drawable.indicator_disable);
             // hide metadata views
             mStationMetadataView.setVisibility(View.GONE);
             mStationDataSheetMetadataLayout.setVisibility(View.GONE);
@@ -849,7 +849,7 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
                     loadAppState(mActivity);
                     // update loading status and playback indicator
                     mStationLoading = false;
-                    mPlaybackIndicator.setBackgroundResource(R.drawable.ic_playback_indicator_started_24dp);
+                    mPlaybackIndicator.setBackgroundResource(R.drawable.indicator_started);
                     // fill metadata views
                     if (mStationMetadata != null) {
                         mStationMetadataView.setText(mStationMetadata);
