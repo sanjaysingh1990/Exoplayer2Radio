@@ -18,5 +18,6 @@
 
     <color name="transistor_white">#FFFFFFFF</color>
     <color name="transistor_transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

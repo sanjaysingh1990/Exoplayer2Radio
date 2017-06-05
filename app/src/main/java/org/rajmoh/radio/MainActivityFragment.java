@@ -79,7 +79,7 @@ public final class MainActivityFragment extends Fragment implements TransistorKe
     private File mFolder;
     private int mFolderSize;
     private View mRootView;
-    private View mActionCallView;
+
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private Parcelable mListState;
@@ -170,7 +170,6 @@ public final class MainActivityFragment extends Fragment implements TransistorKe
         mRootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         // get reference to action call view from inflated root view
-        mActionCallView = mRootView.findViewById(R.id.main_actioncall_layout);
 
         // get reference to recycler list view from inflated root view
         mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.main_recyclerview_collection);
@@ -178,7 +177,6 @@ public final class MainActivityFragment extends Fragment implements TransistorKe
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         // TODO check if necessary here
-        mRecyclerView.setHasFixedSize(true);
 
         // set animator
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -385,11 +383,9 @@ public final class MainActivityFragment extends Fragment implements TransistorKe
     private void toggleActionCall() {
         // show call to action, if necessary
         if (mCollectionAdapter.getItemCount() == 0) {
-            mActionCallView.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
         } else {
-            mActionCallView.setVisibility(View.GONE);
-            mRecyclerView.setVisibility(View.VISIBLE);
+             mRecyclerView.setVisibility(View.VISIBLE);
         }
     }
 
