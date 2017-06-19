@@ -98,7 +98,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="8dp">
+            android:layout_margin="0dp">
 
             <views.CircularSeekBar
                 android:id="@+id/seekbar_volume"
@@ -128,18 +128,40 @@
                 android:padding="32dp" />
 
            <ImageView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
+               android:layout_width="48dp"
+               android:layout_height="48dp"
                android:src="@drawable/ic_next_station"
                android:layout_gravity="bottom|right"
+               android:layout_marginBottom="20dp"
                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_skip_previous"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="80dp"
+
+                />
 
         </FrameLayout>
 
     </LinearLayout>
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="?attr/actionModeShareDrawable"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="30dp"
+        />
     <!-- BOTTOM SHEET -->
     <include layout="@layout/fragment_player_bottomsheet" />
+
+
 
 </android.support.design.widget.CoordinatorLayout>
 

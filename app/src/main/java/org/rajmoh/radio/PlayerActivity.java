@@ -16,6 +16,7 @@ package org.rajmoh.radio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -31,7 +32,6 @@ public final class PlayerActivity extends AppCompatActivity implements Transisto
 
     /* Define log tag */
     private static final String LOG_TAG = PlayerActivity.class.getSimpleName();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

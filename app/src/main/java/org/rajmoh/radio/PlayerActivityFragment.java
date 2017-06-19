@@ -32,6 +32,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.media.MediaBrowserCompat;
@@ -101,6 +102,7 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
     private LinearLayout mStationDataSheetChannelCountLayout;
     private LinearLayout mStationDataSheetSampleRateLayout;
     private LinearLayout mStationDataSheetBitRateLayout;
+    private FloatingActionButton mFloatingActionButton;
     private View mStationDataSheet;
     private TextView mStationDataSheetMetadata;
     private BottomSheetBehavior mStationDataSheetBehavior;
@@ -195,6 +197,7 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
         mPlaybackIndicator = (ImageView) mRootView.findViewById(R.id.player_playback_indicator);
         mStationMenuView = (ImageButton) mRootView.findViewById(R.id.player_item_more_button);
         mCircularSeekBar= (CircularSeekBar) mRootView.findViewById(R.id.seekbar_volume);
+        mFloatingActionButton= (FloatingActionButton) mRootView.findViewById(R.id.floatingActionButton);
 
         // set station name
         mStationNameView.setText(mStationName);
@@ -309,6 +312,18 @@ public final class PlayerActivityFragment extends Fragment implements Transistor
             }
         });
 
+        //share with friends
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,
+                        getResources().getString(R.string.share_download));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
 
         //control device voulume
 
