@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="org.rajmoh.radio.PlayerActivityFragment">
 
     <LinearLayout
-        android:background="@color/transistor_grey_dark"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/playerbackground"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -22,15 +21,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:divider="#ffffff"
-            android:dividerPadding="5dp">
+            android:divider="@android:color/holo_red_dark"
+            android:dividerPadding="5dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/player_imageview_station_icon"
-                android:contentDescription="@string/descr_station_icon"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="?android:attr/listPreferredItemHeight"
+                android:contentDescription="@string/descr_station_icon"
                 android:minHeight="?android:attr/listPreferredItemHeight"
                 app:srcCompat="@drawable/ic_notesymbol_36dp" />
 
@@ -38,35 +37,37 @@
                 android:id="@+id/player_layout_station_info"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:paddingStart="24dp"
-                android:paddingEnd="2dp"
-                android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_vertical" >
+                android:orientation="vertical"
+                android:paddingEnd="2dp"
+                android:paddingStart="24dp">
 
                 <TextView
                     android:id="@+id/player_textview_stationname"
-                    android:contentDescription="@string/descr_station_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/descr_station_name"
                     android:ellipsize="end"
-                    android:singleLine="true"
                     android:maxLines="1"
+                    android:singleLine="true"
                     android:text="@string/descr_station_name_example"
+                    android:textColor="@color/white"
                     android:textAppearance="@android:style/TextAppearance.Large.Inverse" />
 
                 <TextView
                     android:id="@+id/player_textview_station_metadata"
-                    android:contentDescription="@string/descr_station_metadata"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/descr_station_metadata"
                     android:ellipsize="marquee"
-                    android:singleLine="true"
-                    android:marqueeRepeatLimit ="marquee_forever"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
                     android:text="@string/descr_station_stream_loading"
+                    android:textColor="@color/white"
                     android:textAppearance="@android:style/TextAppearance.Small.Inverse"
                     android:visibility="gone" />
 
@@ -74,43 +75,66 @@
 
             <ImageView
                 android:id="@+id/player_playback_indicator"
-                android:contentDescription="@string/descr_playback_indicator"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical"
-                android:minHeight="?android:attr/listPreferredItemHeight"
-                android:background="@drawable/indicator_disable" />
+                android:background="@drawable/indicator_disable"
+                android:contentDescription="@string/descr_playback_indicator"
+                android:minHeight="?android:attr/listPreferredItemHeight" />
 
             <ImageButton
                 android:id="@+id/player_item_more_button"
-                android:contentDescription="@string/descr_overflow_button"
                 android:layout_width="wrap_content"
                 android:layout_height="?android:attr/listPreferredItemHeight"
-                app:srcCompat="@drawable/ic_more_vert_white_24dp"
                 android:background="@android:color/transparent"
-                android:paddingStart="4dp"
+                android:contentDescription="@string/descr_overflow_button"
                 android:paddingEnd="2dp"
-                android:visibility="gone" />
+                android:paddingStart="4dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_more_vert_white_24dp" />
 
         </LinearLayout>
 
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/player_playback_button"
-                android:contentDescription="@string/descr_playback_button"
-                android:adjustViewBounds="true"
-                android:background="@drawable/selector_playback_button"
+            <views.CircularSeekBar
+                android:id="@+id/seekbar_volume"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:circle_x_radius="120dp"
+                app:circle_y_radius="120dp"
+                app:end_angle="270"
+                app:max="100"
+                app:pointer_alpha_ontouch="100"
+                app:pointer_color="#0174DF"
+                app:pointer_halo_color="#880174DF"
+                app:progress="25"
+                app:start_angle="270"
+                app:use_custom_radii="true" />
+
+            <ImageButton
+                android:id="@+id/player_playback_button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:adjustViewBounds="true"
+                android:src="@drawable/smbl_play"
+                android:background="@drawable/circular_button_gradient"
+                android:contentDescription="@string/descr_playback_button"
                 android:padding="32dp" />
 
-        </RelativeLayout>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_next_station"
+               android:layout_gravity="bottom|right"
+               />
+
+        </FrameLayout>
 
     </LinearLayout>
 

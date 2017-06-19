@@ -96,7 +96,8 @@
             android:label="@string/title_activity_player"
             android:parentActivityName="org.rajmoh.radio.MainActivity"
             android:resizeableActivity="true"
-            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout">
+           android:theme="@style/Theme.AppCompat.NoActionBar"
+             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
